@@ -15,6 +15,7 @@
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
     "suppressExcessPropertyErrors": false,
+    "declaration": true,
     "lib":[
       "ES2019"
     ]

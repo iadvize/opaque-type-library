@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createOpaqueAPI toOpaque should return an opaque 1`] = `
+Object {
+  "__OPAQUE_KEY__": "Thing",
+  "__OPAQUE__": "__OPAQUE__",
+  "value": 2,
+}
+`;

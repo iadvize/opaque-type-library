@@ -1,43 +1,157 @@
-# hello-world-javascript-library
-![Continuous integration](https://github.com/iadvize/hello-world-javascript-library/workflows/Continuous%20integration/badge.svg)
+@iadvize/opaque-types
+====================
+![Continuous integration](https://github.com/iadvize/opaque-type-library/workflows/Continuous%20integration/badge.svg)
 
-This is a repo template for other javascript oss libraries at iAdvize. Use it
-for your new library to have a repository set up with lint, test and usefull
-github workflows.
 
-# Features
+Inspired from https://codemix.com/opaque-types-in-javascript/
 
-## Continuous integration
+# Usage
 
-Runs lint, test and build on every commit.
+```
+npm add @iadvize-oss/opaque-type
+```
 
-## Continuous delivery
+# Why ? 
 
-Publish canary versions of the library for pull requests. Publish latest version
-once a pull request is merged on master.
+## Semantic type checking
 
-## Automatic version bump
+The following naive code will compile properly, except that if you mix
+`createRoom` parameters you will introduce a nasty bug at runtime.
 
-Flag your pull requests with `patch`, `minor`, `major` to increment the version
-of your package or with `no-release` otherwise.
+```typescript
+type RoomID = string;
+type UserID = string;
 
-## Automatic changelog bump
+function createRoom(roomId: RoomID, userId: UserID) {
 
-Simply complete the `Unreleased` section of the changelog in your pull request.
-It will be update to the new version once merge.
+}
 
-## Automatic release creation
+const roomId = "roomId" as RoomID;
+const userId = "userId" as UserID;
+createRoom(userId, roomId);
+```
 
-Github releases are created automatically on a new version, using the
-corresponding part of the changelog as content.
+Opaque at rescue !
+This following code won't compile, because `Opaque` add more specificty to
+`RoomId` and `UserId`, so typescript wont think they are compatible because they
+are built uppon a `string`;
 
-## Automatic rebase and merge 
+```typescript
+import { Opaque } from "@iadvize-oss/opaque-type";
 
-Flagging a pull request with the `keep-rebased-then-merge` flag with keep it
-rebased until it can me merged.
+type RoomID = Opaque<"RoomId">;
+type UserID = Opaque<"UserId">;
 
-## Automatic Github Pages documentation release 
+function createRoom(roomId: RoomID, userId: UserID) {
+}
 
-Merging a pull request on master will push a new generation of the documentation
-on `gh-pages` ([example](https://iadvize.github.io/hello-world-javascript-library/))'
+const roomId = "roomId" as RoomID;
+const userId = "userId" as UserID;
+createRoom(userId, roomId);
+```
 
+Here the error message you will get in your editor or when you will try to build
+your application
+```
+Argument of type 'Opaque<"UserId">' is not assignable to parameter of type 'Opaque<"RoomId">'.
+  ...
+```
+
+
+## Type opacification (hence the name)
+
+Let say you built a nice piece of code:
+
+```typescript
+// message.ts
+type Message = {
+  userId: string,
+  text: string,
+};
+
+export function clearMessageText(message: Message) : Message {
+  return message.text = '';
+}
+
+export function getMessage():Message {
+  return ...
+}
+```
+
+You user can endup writting the following code:
+
+```typescript
+import { clearMessageText, getMessage } from './message';
+
+const message = { userId: 'userId', text: 'mytext' };
+
+clearMessageText(message); 
+
+```
+
+or
+
+```typescript
+import { getMessage } from '..'
+
+const message2 = getMessage();
+
+message2.userId = 'whatever';
+```
+
+Those two pieces of code are problematic, because in these the inner structure
+of your types are exposed and manipulated.
+
+If you make any change to the `Message` structure it will be a breaking change
+for your code user. Meaning that he could find himself to edit dozen or hundreds
+of line of code.
+
+How can we avoid this protecting our user from creating a code strongly tied to
+your library internals ?
+
+```typescript
+// message.ts
+import { createOpaqueAPI } from '../index';
+
+type $Message = {
+  userId: string,
+  text: string,
+};
+
+const { toOpaque, fromOpaque } = createOpaqueAPI<
+  'Message',
+  $Message,
+>('Message');
+
+type Message = ReturnType<typeof toOpaque>;
+
+export function getMessage(): Message {
+  return toOpaque({ userId: 'userId', text: 'text' });
+}
+
+export function clearMessageText(message: Message): Message {
+  const $m = fromOpaque(message)
+
+  return toOpaque({
+    ...$m,
+    text: '',
+  });
+}
+```
+
+Your user won't be able to write code in same fashion, we will have to ignore
+the internals of your code.
+
+```typescript
+import { getMessage, clearMessageText } from '../index';
+
+const message = getMessage();
+
+const messageCleared = clearMessageText(message); 
+```
+
+This is especially usefull when creating a reusable a library:
+
+- It does protect the user of your code from himself
+- It does protect you the maintainer by allowing you to break type structure
+  behind the scène without creating a breaking change.
