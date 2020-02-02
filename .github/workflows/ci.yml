@@ -9,7 +9,7 @@ on:
 
 jobs:
   install:
-    name: 'install'
+    name: 'install and build'
     runs-on: ubuntu-18.04
 
     steps:
