@@ -3,6 +3,7 @@ name: Merge pull requests once ready
 on:
   check_suite:
     types: [completed]
+    branches-ignore: [master]
   pull_request:
     types: [labeled]
   pull_request_review:
