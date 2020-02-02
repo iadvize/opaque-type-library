@@ -28,8 +28,8 @@ function createRoom(roomId: RoomID, userId: UserID) {
 
 }
 
-const roomId = "roomId" as RoomID;
-const userId = "userId" as UserID;
+const roomId: RoomID = ...;
+const userId: UserID = ...;
 createRoom(userId, roomId);
 ```
 
@@ -47,9 +47,9 @@ type UserID = Opaque<"UserId">;
 function createRoom(roomId: RoomID, userId: UserID) {
 }
 
-const roomId = "roomId" as RoomID;
-const userId = "userId" as UserID;
-createRoom(userId, roomId);
+const roomId: RoomID = ...;
+const userId: UserID = ...;
+createRoom(userId, roomId); // TypeError
 ```
 
 Here the error message you will get in your editor or when you will try to build
@@ -141,7 +141,7 @@ export function clearMessageText(message: Message): Message {
 }
 ```
 
-Your user won't be able to write code in same fashion, we will have to ignore
+Your user won't be able to write code in same fashion, he will have to ignore
 the internals of your code.
 
 ```typescript
