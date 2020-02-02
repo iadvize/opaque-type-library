@@ -11,7 +11,7 @@ Inspired from https://codemix.com/opaque-types-in-javascript/
 npm add @iadvize-oss/opaque-type
 ```
 
-[:📖 Documentation](https://iadvize.github.io/opaque-type-library/)
+[📖 Documentation](https://iadvize.github.io/opaque-type-library/)
 
 # Why ? 
 
