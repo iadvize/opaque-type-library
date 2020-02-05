@@ -7,7 +7,7 @@ on:
   pull_request:
     types: [labeled]
   pull_request_review:
-    types: [submitted, dismissed]
+    types: [submitted]
 
 jobs:
   build:
@@ -32,6 +32,7 @@ jobs:
           github.event_name == 'check_suite'
           && github.event.check_suite.head_branch != 'master'
           && github.event.check_suite.conclusion == 'success'
+          && steps.pr.outputs.pullExists == 'true'
         )
       with:
         # we use another token here
@@ -39,6 +40,6 @@ jobs:
         # with the GITHUB_TOKEN
         # @see https://help.github.com/en/articles/events-that-trigger-workflows#event-restrictions
         token: ${{ secrets.GITHUB_TOKEN_PONEY }}
-        pullNumber: ${{ (github.event.pull_request && github.event.pull_request.number) || (steps.pr.outputs.pullExists == 'true' && steps.pr.outputs.pullNumber) }}
+        pullNumber: ${{ (github.event.pull_request && github.event.pull_request.number) || steps.pr.outputs.pullNumber }}
         label: 'keep-rebased-then-merge'
 

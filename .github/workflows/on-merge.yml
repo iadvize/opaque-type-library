@@ -21,6 +21,21 @@ jobs:
         git config user.name "Github actions"
         git config user.email "github-actions@iadvize.com"
 
+    - name: Fetch or create gh-pages
+      run: |
+        if git fetch origin gh-pages; then
+          git branch --track gh-pages origin/gh-pages
+        else
+          git checkout --orphan gh-pages
+
+          git reset .
+          git commit --allow-empty -m "Init"
+
+          git push origin gh-pages
+
+          git checkout -f master
+        fi
+
     - uses: actions/setup-node@v1
       with:
         node-verion: '12.x'
@@ -34,9 +49,6 @@ jobs:
 
     - name: Push gh-pages
       run: |
-        git fetch origin gh-pages
-        git branch --track gh-pages origin/gh-pages
-
         git worktree add gh-pages-content gh-pages
         cp -r docs/* gh-pages-content
         cd gh-pages-content
@@ -87,7 +99,6 @@ jobs:
     - name: Push on master
       id: push
       run: |
-
         git push
         git push --tags
 
@@ -236,7 +247,7 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN_PONEY }}
         previews: 'ant-man-preview,flash-preview'
         script: |
-          const name = process.env.name;
+          const name = process.env.NAME;
           const version = process.env.VERSION;
 
           const { data: deployment } = await github.repos.createDeployment({
@@ -267,14 +278,12 @@ jobs:
         VERSION_PART="${VERSION_PART//$'\r'/'%0D'}"
         echo VERSION_PART=$VERSION_PART
 
-        echo "::set-output name=version::$VERSION"
         echo "::set-output name=version-part::$VERSION_PART"
 
     - name: Create Release
       uses: actions/github-script@0.4.0
       env:
-        COMMIT: ${{ github.sha }}
-        VERSION: ${{ steps.extract-changelog.outputs.version }}
+        VERSION: ${{ steps.push.outputs.version }}
         BODY: ${{ steps.extract-changelog.outputs.version-part }}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -283,7 +292,6 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             tag_name: `v${process.env.VERSION}`,
-            target_commitish: process.env.COMMIT,
             name: process.env.TAG,
             body: process.env.BODY,
             draft: false,
