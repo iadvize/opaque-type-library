@@ -20,7 +20,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN_PONEY }}
 
     - name: 'Rebase one pull request based on master with label'
-      uses: iadvize/actions/rebase-pull-requests@17040f374e61b742c868a7ad42ea5357ef66b911
+      uses: iadvize/actions/rebase-pull-requests@608af92d8670e479c749c2c3c6ab782b91d0e4e3
       with:
         # we use another token here
         # because an action in a workflow run can't trigger a new workflow run
