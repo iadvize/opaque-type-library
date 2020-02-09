@@ -12,7 +12,10 @@ jobs:
     if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
 
     steps:
-    - uses: actions/checkout@v2-beta
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        token: ${{ secrets.GITHUB_TOKEN_PONEY }}
 
     - name: Update changelog
       env:
