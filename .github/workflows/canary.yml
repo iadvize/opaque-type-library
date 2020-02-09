@@ -59,7 +59,7 @@ jobs:
         NAME: ${{ steps.compute-version.outputs.name }}
         VERSION: ${{ steps.compute-version.outputs.version }}
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN_PONEY }}
+        github-token: ${{ secrets.GITHUB_TOKEN_REPO_WRITE }}
         previews: 'ant-man-preview,flash-preview'
         script: |
           const name = process.env.NAME;
