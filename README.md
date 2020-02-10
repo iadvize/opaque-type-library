@@ -25,7 +25,7 @@ type RoomID = string;
 type UserID = string;
 
 function createRoom(roomId: RoomID, userId: UserID) {
-
+  // something
 }
 
 const roomId: RoomID = ...;
@@ -34,6 +34,7 @@ createRoom(userId, roomId);
 ```
 
 Opaque at rescue !
+
 This following code won't compile, because `Opaque` add more specificty to
 `RoomId` and `UserId`, so typescript wont think they are compatible because they
 are built uppon a `string`;
@@ -45,15 +46,18 @@ type RoomID = Opaque<"RoomId">;
 type UserID = Opaque<"UserId">;
 
 function createRoom(roomId: RoomID, userId: UserID) {
+  // something
 }
 
 const roomId: RoomID = ...;
 const userId: UserID = ...;
+
 createRoom(userId, roomId); // TypeError
 ```
 
 Here the error message you will get in your editor or when you will try to build
 your application
+
 ```
 Argument of type 'Opaque<"UserId">' is not assignable to parameter of type 'Opaque<"RoomId">'.
   ...
@@ -132,10 +136,10 @@ export function getMessage(): Message {
 }
 
 export function clearMessageText(message: Message): Message {
-  const $m = fromOpaque(message)
+  const $message = fromOpaque(message)
 
   return toOpaque({
-    ...$m,
+    ...$message,
     text: '',
   });
 }
