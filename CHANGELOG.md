@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- misc: bump rollup-plugin-typescript2 from 0.25.3 to 0.26.0
+## [0.0.1]
 
-[Unreleased]: https://github.com/iadvize/opaque-type-library/compare/v0.0.0...HEAD
+-   misc: bump rollup-plugin-typescript2 from 0.25.3 to 0.26.0
+
+[Unreleased]: https://github.com/iadvize/opaque-type-library/compare/v0.0.1...HEAD
+
+[0.0.1]: https://github.com/iadvize/opaque-type-library/compare/v0.0.0...v0.0.1
