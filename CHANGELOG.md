@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-- misc: bump typedoc from 0.16.9 to 0.16.10
+## [1.0.1]
 
-### Changed\n- misc: bump rollup from 1.31.0 to 1.31.1
+### Changed
+
+-   misc: bump typedoc from 0.16.9 to 0.16.10
+
+### Changed\\n- misc: bump rollup from 1.31.0 to 1.31.1
 
 ## [1.0.0]
 
@@ -19,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   first version with `createOpaqueAPI` returning `toOpaque`, `fromOpaque` and
     \`isOpaque
 
-[Unreleased]: https://github.com/iadvize/opaque-type-library/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/iadvize/opaque-type-library/compare/v1.0.1...HEAD
+
+[1.0.1]: https://github.com/iadvize/opaque-type-library/compare/v1.0.0...v1.0.1
 
 [1.0.0]: https://github.com/iadvize/opaque-type-library/compare/v0.0.1...v1.0.0
