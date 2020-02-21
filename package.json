@@ -1,6 +1,6 @@
 {
   "name": "@iadvize-oss/opaque-type",
-  "version": "1.0.2-beta.1",
+  "version": "1.0.2-beta.2",
   "description": "Functional opaque type api for Typescript and Javascript",
   "main": "dist/index.js",
   "module": "esm/index.js",
