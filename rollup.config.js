@@ -10,13 +10,7 @@ export default [
       '!src/**/*.test.(ts|tsx)',
       '!src/**/*.stories.(ts|tsx)',
     ],
-    plugins: [
-      multiInput(),
-      commonjs(),
-
-      typescript(),
-      terser(),
-    ],
+    plugins: [multiInput(), commonjs(), typescript(), terser()],
     external: [],
     output: [
       {
