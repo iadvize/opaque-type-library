@@ -23,24 +23,22 @@ jobs:
       uses: actions/cache@v1
       with:
         path: ~/.npm
-        key: v1-npm-${{ github.ref }}-${{ hashFiles('package-lock.json') }}
+        key: v2-npm-${{ hashFiles('package-lock.json') }}
         restore-keys: |
-          v1-npm-${{ github.ref }}-
-          v1-npm-
+          v2-npm-
 
     - name: Restore package
       id: node-modules-cache
       uses: actions/cache@v1
       with:
-        path: .
-        key: v1-packages-${{ github.ref }}-${{ hashFiles('package-lock.json') }}
+        path: node_modules
+        key: v2-node_modules-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          v2-node_modules-
 
     - name: Install
       if: steps.node-modules-cache.outputs.cache-hit != 'true'
       run: npm ci
-
-    - name: Build
-      run: npm run build
 
   lint:
     name: 'lint'
@@ -60,8 +58,10 @@ jobs:
       uses: actions/cache@v1
       id: node-modules-cache
       with:
-        path: .
-        key: v1-packages-${{ github.ref }}-${{ hashFiles('package-lock.json') }}
+        path: node_modules
+        key: v2-node_modules-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          v2-node_modules-
 
     - name: Lint
       run: npm run lint:js
@@ -84,8 +84,13 @@ jobs:
       uses: actions/cache@v1
       id: node-modules-cache
       with:
-        path: .
-        key: v1-packages-${{ github.ref }}-${{ hashFiles('package-lock.json') }}
+        path: node_modules
+        key: v2-node_modules-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          v2-node_modules-
+
+    - name: Build
+      run: npm run build
 
     - name: Test
       run: npm run test:js
