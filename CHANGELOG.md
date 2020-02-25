@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- misc: bump rollup-plugin-multi-input from 1.0.3 to 1.1.0
+
 ### Changed
 - misc: bump typescript from 3.7.5 to 3.8.2
 
