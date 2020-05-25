@@ -22,31 +22,7 @@ export type Opaque<Key extends string> = {
   readonly value: unknown;
 };
 
-/**
- * Create the api for one specific opaque
- *
- * @example
-```ts
-  type $Car = { brand: string };
-
-  const {
-      toOpaque,
-      fromOpaque,
-      isOpaque,
-  } = createOpaqueAPI<'CAR', $Car>('CAR');
-
-  type Car = ReturnType<typeof toOpaque>
-```
- *
- * @typeParam Key - The key used to distinguish this opaque type from other
- * @param     key - The key used to distinguish this opaque type from other
- * @typeParam $PrivateValue - The private type hidden in the opaque
- *
- * @returns API for Opaque<Key>
- */
-export function createOpaqueAPI<Key extends string, $PrivateValue>(
-  key: Key,
-): {
+export type OpaqueApi<Key extends string, $PrivateValue> = {
   /**
    * Encapsulate a private, non-opaque, value in the opaque
    *
@@ -118,7 +94,33 @@ export function createOpaqueAPI<Key extends string, $PrivateValue>(
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   isOpaque: (thing: any) => thing is Opaque<Key>;
-} {
+};
+
+/**
+ * Create the api for one specific opaque
+ *
+ * @example
+```ts
+  type $Car = { brand: string };
+
+  const {
+      toOpaque,
+      fromOpaque,
+      isOpaque,
+  } = createOpaqueAPI<'CAR', $Car>('CAR');
+
+  type Car = ReturnType<typeof toOpaque>
+```
+ *
+ * @typeParam Key - The key used to distinguish this opaque type from other
+ * @param     key - The key used to distinguish this opaque type from other
+ * @typeParam $PrivateValue - The private type hidden in the opaque
+ *
+ * @returns API for Opaque<Key>
+ */
+export function createOpaqueAPI<Key extends string, $PrivateValue>(
+  key: Key,
+): OpaqueApi<Key, $PrivateValue> {
   type LocalOpaque = Opaque<Key>;
 
   return {
