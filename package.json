@@ -52,7 +52,7 @@
     "tsd": "^0.11.0",
     "tslib": "^2.0.0",
     "typedoc": "^0.17.7",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   },
   "tsd": {
     "directory": "test-types"
