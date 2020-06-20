@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1]
+
 ### Changed
 
 -   update dependencies
@@ -36,7 +38,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   first version with `createOpaqueAPI` returning `toOpaque`, `fromOpaque` and
     \`isOpaque
 
-[Unreleased]: https://github.com/iadvize/opaque-type-library/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/iadvize/opaque-type-library/compare/v1.1.1...HEAD
+
+[1.1.1]: https://github.com/iadvize/opaque-type-library/compare/v1.1.0...v1.1.1
 
 [1.1.0]: https://github.com/iadvize/opaque-type-library/compare/v1.0.1...v1.1.0
 
