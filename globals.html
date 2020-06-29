@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;index&quot; | @iadvize-oss/opaque-type - v1.1.1</title>
+	<title>@iadvize-oss/opaque-type - v1.1.1</title>
 	<meta name="description" content="Documentation for @iadvize-oss/opaque-type - v1.1.1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -53,10 +53,10 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">&quot;index&quot;</a>
+					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>Module &quot;index&quot;</h1>
+			<h1>@iadvize-oss/opaque-type - v1.1.1</h1>
 		</div>
 	</div>
 </header>
@@ -68,332 +68,28 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Type aliases</h3>
+							<h3>Modules</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter"><a href="globals.html#opaque" class="tsd-kind-icon">Opaque</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter"><a href="globals.html#opaqueapi" class="tsd-kind-icon">Opaque<wbr>Api</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="globals.html#createopaqueapi" class="tsd-kind-icon">create<wbr>OpaqueAPI</a></li>
+								<li class="tsd-kind-module"><a href="modules/_src_index_.html" class="tsd-kind-icon">&quot;src/index&quot;</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="opaque" class="tsd-anchor"></a>
-					<h3>Opaque</h3>
-					<div class="tsd-signature tsd-kind-icon">Opaque&lt;Key&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>__OPAQUE_KEY__<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">; </span>__OPAQUE__<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"__OPAQUE__"</span><span class="tsd-signature-symbol">; </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol"> }</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/iadvize/opaque-type-library/blob/7095897/src/index.ts#L4">index.ts:4</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The opaque type, of type <code>Key</code>, storing something private in <code>value</code></p>
-						</div>
-					</div>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-							<h4>Key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> __OPAQUE_<wbr>KEY__<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Where the type of opaque is stored</p>
-									</div>
-									<dl class="tsd-comment-tags">
-										<dt>internal</dt>
-										<dd></dd>
-									</dl>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> __OPAQUE__<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"__OPAQUE__"</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<dl class="tsd-comment-tags">
-										<dt>internal</dt>
-										<dd></dd>
-									</dl>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Where the private value is stored</p>
-									</div>
-									<dl class="tsd-comment-tags">
-										<dt>internal</dt>
-										<dd></dd>
-									</dl>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="opaqueapi" class="tsd-anchor"></a>
-					<h3>Opaque<wbr>Api</h3>
-					<div class="tsd-signature tsd-kind-icon">Opaque<wbr>Api&lt;Key, $PrivateValue&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>fromOpaque<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>opaque<span class="tsd-signature-symbol">: </span><a href="globals.html#opaque" class="tsd-signature-type">Opaque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">$PrivateValue</span><span class="tsd-signature-symbol">; </span>isOpaque<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>thing<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">thing</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Opaque</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>toOpaque<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">$PrivateValue</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="globals.html#opaque" class="tsd-signature-type">Opaque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/iadvize/opaque-type-library/blob/7095897/src/index.ts#L25">index.ts:25</a></li>
-						</ul>
-					</aside>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-							<h4>Key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
-						</li>
-						<li>
-							<h4>$PrivateValue</h4>
-						</li>
-					</ul>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>from<wbr>Opaque<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>opaque<span class="tsd-signature-symbol">: </span><a href="globals.html#opaque" class="tsd-signature-type">Opaque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">$PrivateValue</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Extract the private value from the opaque</p>
-									</div>
-									<p>Should usually not be shared outside of where the private type is used</p>
-									<dl class="tsd-comment-tags">
-										<dt>example</dt>
-										<dd><pre><code class="language-ts"><span class="hljs-keyword">type</span> $Car = { brand: <span class="hljs-built_in">string</span> };
-
-<span class="hljs-keyword">const</span> { fromOpaque } = createOpaqueAPI&lt;<span class="hljs-string">'CAR'</span>, $Car&gt;(<span class="hljs-string">'CAR'</span>);
-
-<span class="hljs-keyword">type</span> Car = ReturnType&lt;<span class="hljs-keyword">typeof</span> toOpaque&gt;
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">brand</span>(<span class="hljs-params">car: Car</span>) </span>{
-<span class="hljs-keyword">const</span> $car = fromOpaque(car);
-
-<span class="hljs-keyword">return</span> $car.brand;
-}</code></pre>
-										</dd>
-										<dt>param</dt>
-										<dd><p>The opaque from which to extract the private value</p>
-										</dd>
-										<dt>returns</dt>
-										<dd><p>The private value hidden in the opaque</p>
-										</dd>
-									</dl>
-								</div>
-								<ul class="tsd-parameters">
-									<li class="tsd-parameter-signature">
-										<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
-											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>opaque<span class="tsd-signature-symbol">: </span><a href="globals.html#opaque" class="tsd-signature-type">Opaque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">$PrivateValue</span></li>
-										</ul>
-										<ul class="tsd-descriptions">
-											<li class="tsd-description">
-												<h4 class="tsd-parameters-title">Parameters</h4>
-												<ul class="tsd-parameters">
-													<li>
-														<h5>opaque: <a href="globals.html#opaque" class="tsd-signature-type">Opaque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span></h5>
-													</li>
-												</ul>
-												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">$PrivateValue</span></h4>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li class="tsd-parameter">
-								<h5>is<wbr>Opaque<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>thing<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">thing</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Opaque</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Test if something is an opaque</p>
-									</div>
-									<dl class="tsd-comment-tags">
-										<dt>example</dt>
-										<dd><pre><code class="language-ts"><span class="hljs-keyword">type</span> $Car = { brand: <span class="hljs-built_in">string</span> };
-<span class="hljs-keyword">const</span> CarAPI = createOpaqueAPI&lt;<span class="hljs-string">'CAR'</span>, $Car&gt;(<span class="hljs-string">'CAR'</span>);
-<span class="hljs-keyword">type</span> Car = ReturnType&lt;<span class="hljs-keyword">typeof</span> toOpaque&gt;
-
-<span class="hljs-keyword">type</span> $Bike = { brand: <span class="hljs-built_in">string</span> };
-<span class="hljs-keyword">const</span> BikeAPI = createOpaqueAPI&lt;<span class="hljs-string">'CAR'</span>, $Bike&gt;(<span class="hljs-string">'CAR'</span>);
-<span class="hljs-keyword">type</span> Bike = ReturnType&lt;<span class="hljs-keyword">typeof</span> toOpaque&gt;
-
-<span class="hljs-keyword">const</span> myCar: Car = CarAPI.toOpaque({ brand: <span class="hljs-string">'Peugeot'</span> });
-<span class="hljs-keyword">const</span> myBike: Bike = BikeAPI.toOpaque({ brand: <span class="hljs-string">'Peugeot'</span> });
-
-CarAPI.isOpaque(myCar); <span class="hljs-comment">// true</span>
-CarAPI.isOpaque(myBike); <span class="hljs-comment">// false</span></code></pre>
-										</dd>
-										<dt>param</dt>
-										<dd><p>Anything</p>
-										</dd>
-										<dt>returns</dt>
-										<dd><p><code>true</code> if thing is an opaque with the corresponding key</p>
-										</dd>
-									</dl>
-								</div>
-								<ul class="tsd-parameters">
-									<li class="tsd-parameter-signature">
-										<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
-											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>thing<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">thing</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Opaque</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span></li>
-										</ul>
-										<ul class="tsd-descriptions">
-											<li class="tsd-description">
-												<h4 class="tsd-parameters-title">Parameters</h4>
-												<ul class="tsd-parameters">
-													<li>
-														<h5>thing: <span class="tsd-signature-type">any</span></h5>
-													</li>
-												</ul>
-												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">thing</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Opaque</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span></h4>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li class="tsd-parameter">
-								<h5>to<wbr>Opaque<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">$PrivateValue</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="globals.html#opaque" class="tsd-signature-type">Opaque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Encapsulate a private, non-opaque, value in the opaque</p>
-									</div>
-									<dl class="tsd-comment-tags">
-										<dt>example</dt>
-										<dd><pre><code class="language-ts"><span class="hljs-keyword">type</span> $Car = { brand: <span class="hljs-built_in">string</span> };
-
-<span class="hljs-keyword">const</span> { toOpaque } = createOpaqueAPI&lt;<span class="hljs-string">'CAR'</span>, $Car&gt;(<span class="hljs-string">'CAR'</span>);
-
-<span class="hljs-keyword">type</span> Car = ReturnType&lt;<span class="hljs-keyword">typeof</span> toOpaque&gt;
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createCar</span>(<span class="hljs-params">brand: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">Car</span> </span>{
-<span class="hljs-keyword">return</span> toOpaque({ brand });
-}</code></pre>
-										</dd>
-										<dt>param</dt>
-										<dd><p>The value to hide in the opaque</p>
-										</dd>
-										<dt>returns</dt>
-										<dd><p>The opaque</p>
-										</dd>
-									</dl>
-								</div>
-								<ul class="tsd-parameters">
-									<li class="tsd-parameter-signature">
-										<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
-											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">$PrivateValue</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#opaque" class="tsd-signature-type">Opaque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span></li>
-										</ul>
-										<ul class="tsd-descriptions">
-											<li class="tsd-description">
-												<h4 class="tsd-parameters-title">Parameters</h4>
-												<ul class="tsd-parameters">
-													<li>
-														<h5>value: <span class="tsd-signature-type">$PrivateValue</span></h5>
-													</li>
-												</ul>
-												<h4 class="tsd-returns-title">Returns <a href="globals.html#opaque" class="tsd-signature-type">Opaque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">&gt;</span></h4>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="createopaqueapi" class="tsd-anchor"></a>
-					<h3>create<wbr>OpaqueAPI</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>OpaqueAPI&lt;Key, $PrivateValue&gt;<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#opaqueapi" class="tsd-signature-type">OpaqueApi</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">$PrivateValue</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/iadvize/opaque-type-library/blob/7095897/src/index.ts#L121">index.ts:121</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create the api for one specific opaque</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>example</dt>
-									<dd><pre><code class="language-ts"><span class="hljs-keyword">type</span> $Car = { brand: <span class="hljs-built_in">string</span> };
-
-<span class="hljs-keyword">const</span> {
-toOpaque,
-fromOpaque,
-isOpaque,
-} = createOpaqueAPI&lt;<span class="hljs-string">'CAR'</span>, $Car&gt;(<span class="hljs-string">'CAR'</span>);
-
-<span class="hljs-keyword">type</span> Car = ReturnType&lt;<span class="hljs-keyword">typeof</span> toOpaque&gt;</code></pre>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>Key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
-									<div class="tsd-comment tsd-typography">
-										<p>The key used to distinguish this opaque type from other</p>
-									</div>
-								</li>
-								<li>
-									<h4>$PrivateValue</h4>
-									<div class="tsd-comment tsd-typography">
-										<p>The private type hidden in the opaque</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>key: <span class="tsd-signature-type">Key</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The key used to distinguish this opaque type from other</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="globals.html#opaqueapi" class="tsd-signature-type">OpaqueApi</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">$PrivateValue</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>API for Opaque<Key></p>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="current tsd-kind-module">
-						<a href="globals.html">&quot;index&quot;</a>
+					<li class="globals current ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_index_.html">&quot;src/index&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="globals.html#opaque" class="tsd-kind-icon">Opaque</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="globals.html#opaqueapi" class="tsd-kind-icon">Opaque<wbr>Api</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="globals.html#createopaqueapi" class="tsd-kind-icon">create<wbr>OpaqueAPI</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -415,6 +111,5 @@ isOpaque,
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
