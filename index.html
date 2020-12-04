@@ -111,16 +111,16 @@ createRoom(userId, roomId);</code></pre>
 createRoom(userId, roomId); <span class="hljs-comment">// TypeError</span></code></pre>
 				<p>Here the error message you will get in your editor or when you will try to build
 				your application</p>
-				<pre><code>Argument of<span class="hljs-built_in"> type </span><span class="hljs-string">&#x27;Opaque&lt;&quot;UserId&quot;&gt;&#x27;</span> is <span class="hljs-keyword">not</span> assignable <span class="hljs-keyword">to</span> parameter of<span class="hljs-built_in"> type </span><span class="hljs-string">&#x27;Opaque&lt;&quot;RoomId&quot;&gt;&#x27;</span>.
-  <span class="hljs-built_in">..</span>.</code></pre>
+				<pre><code>Argument <span class="hljs-keyword">of</span> <span class="hljs-keyword">type</span> <span class="hljs-symbol">&#x27;Opaque</span>&lt;<span class="hljs-string">&quot;UserId&quot;</span>&gt;&#x27; <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> assignable <span class="hljs-keyword">to</span> <span class="hljs-keyword">parameter</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">type</span> <span class="hljs-symbol">&#x27;Opaque</span>&lt;<span class="hljs-string">&quot;RoomId&quot;</span>&gt;&#x27;.
+  ...</code></pre>
 				<a href="#type-opacification-hence-the-name" id="type-opacification-hence-the-name" style="color: inherit; text-decoration: none;">
 					<h2>Type opacification (hence the name)</h2>
 				</a>
 				<p>Let say you built a nice piece of code:</p>
 				<pre><code class="language-typescript"><span class="hljs-comment">// message.ts</span>
 <span class="hljs-keyword">type</span> Message = {
-  userId: <span class="hljs-built_in">string</span>,
-  text: <span class="hljs-built_in">string</span>,
+  <span class="hljs-attr">userId</span>: <span class="hljs-built_in">string</span>,
+  <span class="hljs-attr">text</span>: <span class="hljs-built_in">string</span>,
 };
 
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clearMessageText</span>(<span class="hljs-params">message: Message</span>) : <span class="hljs-title">Message</span> </span>{
@@ -133,7 +133,7 @@ createRoom(userId, roomId); <span class="hljs-comment">// TypeError</span></code
 				<p>You user can endup writting the following code:</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { clearMessageText, getMessage } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./message&#x27;</span>;
 
-<span class="hljs-keyword">const</span> message = { userId: <span class="hljs-string">&#x27;userId&#x27;</span>, text: <span class="hljs-string">&#x27;mytext&#x27;</span> };
+<span class="hljs-keyword">const</span> message = { <span class="hljs-attr">userId</span>: <span class="hljs-string">&#x27;userId&#x27;</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;mytext&#x27;</span> };
 
 clearMessageText(message); 
 </code></pre>
@@ -154,8 +154,8 @@ message2.userId = <span class="hljs-string">&#x27;whatever&#x27;</span>;</code><
 <span class="hljs-keyword">import</span> { createOpaqueAPI } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../index&#x27;</span>;
 
 <span class="hljs-keyword">type</span> $Message = {
-  userId: <span class="hljs-built_in">string</span>,
-  text: <span class="hljs-built_in">string</span>,
+  <span class="hljs-attr">userId</span>: <span class="hljs-built_in">string</span>,
+  <span class="hljs-attr">text</span>: <span class="hljs-built_in">string</span>,
 };
 
 <span class="hljs-keyword">const</span> { toOpaque, fromOpaque } = createOpaqueAPI&lt;
@@ -166,7 +166,7 @@ message2.userId = <span class="hljs-string">&#x27;whatever&#x27;</span>;</code><
 <span class="hljs-keyword">type</span> Message = ReturnType&lt;<span class="hljs-keyword">typeof</span> toOpaque&gt;;
 
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMessage</span>(<span class="hljs-params"></span>): <span class="hljs-title">Message</span> </span>{
-  <span class="hljs-keyword">return</span> toOpaque({ userId: <span class="hljs-string">&#x27;userId&#x27;</span>, text: <span class="hljs-string">&#x27;text&#x27;</span> });
+  <span class="hljs-keyword">return</span> toOpaque({ <span class="hljs-attr">userId</span>: <span class="hljs-string">&#x27;userId&#x27;</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;text&#x27;</span> });
 }
 
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clearMessageText</span>(<span class="hljs-params">message: Message</span>): <span class="hljs-title">Message</span> </span>{
@@ -174,7 +174,7 @@ message2.userId = <span class="hljs-string">&#x27;whatever&#x27;</span>;</code><
 
   <span class="hljs-keyword">return</span> toOpaque({
     ...$message,
-    text: <span class="hljs-string">&#x27;&#x27;</span>,
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;&#x27;</span>,
   });
 }</code></pre>
 				<p>Your user won&#39;t be able to write code in same fashion, he will have to ignore
