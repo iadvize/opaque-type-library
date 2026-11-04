@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - uses: actions/checkout@v2-beta
+    - uses: actions/checkout@a6747255bd19d7a757dbdda8c654a9f84db19839 # v2-beta
 
-    - uses: actions/setup-node@v1
+    - uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e # v1.4.6
       with:
         node-verion: '12.x'
 
     - name: Cache npm cache
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1.2.1
       with:
         path: ~/.npm
         key: v2-npm-${{ hashFiles('package-lock.json') }}
@@ -29,7 +29,7 @@ jobs:
 
     - name: Restore package
       id: node-modules-cache
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1.2.1
       with:
         path: node_modules
         key: v2-node_modules-${{ hashFiles('package-lock.json') }}
@@ -48,14 +48,14 @@ jobs:
       - install
 
     steps:
-    - uses: actions/checkout@v2-beta
+    - uses: actions/checkout@a6747255bd19d7a757dbdda8c654a9f84db19839 # v2-beta
 
-    - uses: actions/setup-node@v1
+    - uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e # v1.4.6
       with:
         node-verion: '12.x'
 
     - name: Restore package
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1.2.1
       id: node-modules-cache
       with:
         path: node_modules
@@ -74,14 +74,14 @@ jobs:
       - install
 
     steps:
-    - uses: actions/checkout@v2-beta
+    - uses: actions/checkout@a6747255bd19d7a757dbdda8c654a9f84db19839 # v2-beta
 
-    - uses: actions/setup-node@v1
+    - uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e # v1.4.6
       with:
         node-verion: '12.x'
 
     - name: Restore package
-      uses: actions/cache@v1
+      uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1.2.1
       id: node-modules-cache
       with:
         path: node_modules
